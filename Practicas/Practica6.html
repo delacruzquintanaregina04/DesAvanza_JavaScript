@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Práctica 6 - Registro con Zod</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #f8fafc; color: #0f172a; }
+    h1 { margin-bottom: 1rem; }
+    .form-card { background: white; padding: 1.5rem; border-radius: 1rem; max-width: 500px; box-shadow: 0 10px 24px rgba(15,23,42,0.08); }
+    .form-group { margin-bottom: 1rem; }
+    label { display: block; margin-bottom: 0.35rem; font-weight: 600; }
+    input { width: 100%; padding: 0.85rem 1rem; border: 1px solid #cbd5e1; border-radius: 0.75rem; font-size: 1rem; }
+    button { background: #2563eb; color: white; border: none; padding: 0.9rem 1.25rem; border-radius: 0.75rem; cursor: pointer; font-size: 1rem; }
+    button:hover { background: #1d4ed8; }
+    .error-list { margin-top: 1rem; padding: 1rem; border-radius: 0.75rem; background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+    .success { margin-top: 1rem; padding: 1rem; border-radius: 0.75rem; background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+  </style>
+</head>
+<body>
+  <h1>Registro con Zod</h1>
+  <div class="form-card">
+    <form id="registration-form" novalidate>
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" placeholder="Tu nombre completo" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" placeholder="Contraseña segura" required />
+      </div>
+      <button type="submit">Enviar registro</button>
+    </form>
+    <div id="form-errors"></div>
+    <div id="form-success"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/zod@3.23.2/lib/index.umd.min.js"></script>
+  <script src="Practica6.js"></script>
+</body>
+</html>
