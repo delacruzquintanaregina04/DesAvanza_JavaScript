@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 4 - Reservas de Restaurante</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+        background: #f8fafc;
+        color: #1f2937;
+      }
+      h1 {
+        margin-bottom: 0.5rem;
+      }
+      .instructions {
+        background: #eef2ff;
+        border: 1px solid #c7d2fe;
+        border-radius: 0.75rem;
+        padding: 1rem 1.25rem;
+        margin-bottom: 1rem;
+      }
+      .instructions h2 {
+        margin-top: 0;
+      }
+      .instructions ol {
+        margin: 0.5rem 0 0 1.25rem;
+        color: #1e293b;
+      }
+      .form-card {
+        background: white;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+        max-width: 520px;
+      }
+      .form-group {
+        display: grid;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      label {
+        font-weight: 600;
+      }
+      input,
+      select,
+      button {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        border-radius: 0.75rem;
+        border: 1px solid #cbd5e1;
+        font-size: 1rem;
+      }
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #1d4ed8;
+      }
+      .message {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 0.75rem;
+      }
+      .message.success {
+        background: #d1fae5;
+        color: #166534;
+        border: 1px solid #a7f3d0;
+      }
+      .message.error {
+        background: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #fecaca;
+      }
+      .reservations {
+        margin-top: 2rem;
+      }
+      .reservation-item {
+        padding: 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.75rem;
+        background: #fff;
+        margin-bottom: 0.75rem;
+      }
+      .reservation-item span {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Reservas de Restaurante</h1>
+    <section class="instructions">
+      <h2>Instrucciones</h2>
+      <ol>
+        <li>
+          Verificar la disponibilidad de mesas para el día y la hora
+          solicitados.
+        </li>
+        <li>Confirmar la reserva si hay mesas disponibles.</li>
+        <li>Simular el envío de un correo de confirmación.</li>
+        <li>
+          Manejar errores cuando no haya mesas disponibles o falle el correo.
+        </li>
+      </ol>
+    </section>
+    <div class="form-card">
+      <div class="form-group">
+        <label for="customer-name">Nombre del cliente</label>
+        <input type="text" id="customer-name" placeholder="Ingresa tu nombre" />
+      </div>
+      <div class="form-group">
+        <label for="reservation-date">Fecha de reserva</label>
+        <input type="date" id="reservation-date" />
+      </div>
+      <div class="form-group">
+        <label for="reservation-time">Hora de reserva</label>
+        <select id="reservation-time">
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="tables-requested">Mesas solicitadas</label>
+        <input type="number" id="tables-requested" min="1" max="5" value="1" />
+      </div>
+      <button id="reserve-button">Confirmar reserva</button>
+      <div id="message-container"></div>
+    </div>
+
+    <section class="reservations">
+      <h2>Reservas confirmadas</h2>
+      <div id="reservations-list"></div>
+    </section>
+
+    <script src="Practica4.js"></script>
+  </body>
+</html>
