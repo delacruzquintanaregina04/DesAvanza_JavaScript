@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 5 - Formulario de Registro</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+        background: #f3f4f6;
+        color: #111827;
+      }
+      h1 {
+        margin-bottom: 1rem;
+      }
+      .form-card {
+        background: #ffffff;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        max-width: 640px;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-weight: 600;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="date"],
+      input[type="file"] {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.75rem;
+      }
+      .checkbox-group,
+      .radio-group {
+        display: grid;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      .options-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .option-label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 0.9rem 1.25rem;
+        font-size: 1rem;
+        border-radius: 0.75rem;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #1d4ed8;
+      }
+      .message {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 0.75rem;
+      }
+      .message.success {
+        background: #d1fae5;
+        color: #166534;
+      }
+      .message.error {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+      .summary {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 0.75rem;
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+      }
+      .summary p {
+        margin: 0.35rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Práctica 5 - Registro al evento</h1>
+    <div class="form-card">
+      <form id="registration-form" novalidate>
+        <div class="form-group">
+          <label for="name">Nombre completo</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Tu nombre"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="ejemplo@correo.com"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Teléfono</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="5512345678"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Intereses</label>
+          <div class="checkbox-group">
+            <label class="option-label"
+              ><input type="checkbox" name="interests" value="Networking" />
+              Networking</label
+            >
+            <label class="option-label"
+              ><input type="checkbox" name="interests" value="Talleres" />
+              Talleres</label
+            >
+            <label class="option-label"
+              ><input type="checkbox" name="interests" value="Conferencias" />
+              Conferencias</label
+            >
+            <label class="option-label"
+              ><input type="checkbox" name="interests" value="Cenas" />
+              Cenas</label
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Horario preferido</label>
+          <div class="radio-group">
+            <label class="option-label"
+              ><input type="radio" name="schedule" value="Mañana" required />
+              Mañana</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="schedule" value="Tarde" /> Tarde</label
+            >
+            <label class="option-label"
+              ><input type="radio" name="schedule" value="Noche" /> Noche</label
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="event-date">Fecha del evento</label>
+          <input type="date" id="event-date" name="eventDate" required />
+        </div>
+        <div class="form-group">
+          <label for="id-file">Documento de identificación (opcional)</label>
+          <input type="file" id="id-file" name="idFile" accept="image/*,.pdf" />
+        </div>
+        <button type="submit">Enviar registro</button>
+      </form>
+      <div id="form-message"></div>
+      <div id="form-summary" class="summary" style="display: none"></div>
+    </div>
+    <script src="Practica5.js"></script>
+  </body>
+</html>
