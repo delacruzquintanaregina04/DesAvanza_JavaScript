@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Práctica 2 - Inventario de Libros</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #f4f7fb; color: #1f2937; }
+    h1 { margin-bottom: 0.5rem; }
+    .controls { display: grid; gap: 0.75rem; margin: 1rem 0; }
+    .controls input, .controls select, .controls button { padding: 0.75rem; font-size: 1rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; }
+    .controls button { background: #2563eb; color: white; border: none; cursor: pointer; }
+    .controls button:hover { background: #1d4ed8; }
+    .inventory { margin-top: 1rem; display: grid; gap: 0.75rem; }
+    .book-card { padding: 1rem; border-radius: 0.75rem; background: white; border: 1px solid #cbd5e1; }
+    .book-card span { display: inline-block; margin-right: 1rem; }
+    .status { font-weight: 700; }
+    .status.disponible { color: #16a34a; }
+    .status.no-disponible { color: #dc2626; }
+    .message { color: #475569; }
+  </style>
+</head>
+<body>
+  <h1>Inventario de Libros</h1>
+  <p class="message">Simulación de lectura y escritura de un objeto JSON mediante callbacks.</p>
+
+  <div class="controls">
+    <button id="load-inventory">Cargar inventario</button>
+    <div>
+      <input id="title-input" type="text" placeholder="Título" />
+      <input id="author-input" type="text" placeholder="Autor" />
+      <input id="genre-input" type="text" placeholder="Género" />
+      <select id="availability-input">
+        <option value="true">Disponible</option>
+        <option value="false">No disponible</option>
+      </select>
+      <button id="add-book-button">Agregar libro</button>
+    </div>
+    <div>
+      <input id="search-title-input" type="text" placeholder="Buscar por título" />
+      <button id="search-book-button">Buscar libro</button>
+      <button id="show-all-button">Mostrar todo</button>
+    </div>
+  </div>
+
+  <div class="inventory" id="inventory-container"></div>
+
+  <script src="Practica2.js"></script>
+</body>
+</html>
